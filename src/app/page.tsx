@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className='grid min-h-screen place-items-center'>
-      <div className='flex flex-col items-center justify-center space-y-5 text-center h-96 w-96'>
+    <main className='min-h-screen grid place-items-center'>
+      <div className='flex flex-col items-center justify-center text-center space-y-5 h-96 w-96'>
         <Image
           src='/lanyard-logo.png'
           alt='lanyard logo'
