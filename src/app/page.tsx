@@ -10,6 +10,7 @@ export default function Home() {
           alt='lanyard logo'
           width={96}
           height={96}
+          draggable={false}
         />
 
         <h1 className='text-5xl font-bold md:text-7xl'>

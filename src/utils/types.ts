@@ -1,80 +1,41 @@
-export type LanyardAPI = {
-  data: Data
-  success: boolean
-  error?: Error
-}
-
-type Data = {
-  kv: Kv
-  spotify: Spotify
-  discord_user: DiscordUser
-  activities: Activity[]
-  discord_status: string
-  active_on_discord_web: boolean
-  active_on_discord_desktop: boolean
-  active_on_discord_mobile: boolean
-  listening_to_spotify: boolean
-}
-
-type Activity = {
-  flags?: number
-  id: string
-  name: string
-  type: number
-  state?: string
-  session_id?: string
-  details?: string
-  timestamps: Timestamps
-  assets: Assets
-  sync_id?: string
-  created_at: number
-  party?: Party
-  application_id?: string
-}
-
-type Assets = {
-  large_image: string
-  large_text: string
-  small_image?: string
-  small_text?: string
-}
-
-type Party = {
-  id: string
-}
-
-type Timestamps = {
-  start: number
-  end?: number
-}
-
-type DiscordUser = {
+export interface User {
   id: string
   username: string
+  global_name?: string
   avatar: string
+  avatar_decoration_data?: string
   discriminator: string
-  bot: boolean
-  global_name: string
-  avatar_decoration_data: null
-  display_name: string
   public_flags: number
+  banner?: string
+  banner_color?: string
+  accent_color?: string
+  bio?: string
+  cached?: boolean
 }
 
-type Kv = {
-  github: string
-  isWatching: string
+export interface UserProfile {
+  bio: string
+  accent_color: number
+  banner: string
+  theme_colors: number[]
 }
 
-type Spotify = {
-  timestamps: Timestamps
-  album: string
-  album_art_url: string
-  artist: string
-  song: string
-  track_id: string
+export interface Profile {
+  user: User
+  user_profile: UserProfile
+  legacy_username?: string
+  connected_accounts: ConnectedAccount[]
+  premium_type: number
+  premium_since: string
+  premium_guild_since: string
+  cached?: boolean
 }
 
-type Error = {
-  code: string
-  message: string
+export interface ConnectedAccount {
+  type: string
+  id: string
+  name: string
+  href: string
+  metadata?: Record<string, string>
+  verified: boolean
 }
