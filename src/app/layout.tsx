@@ -10,6 +10,10 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Lanyard Visualizer',
   description: "A service to display your Discord status online using Lanyard's API, free and easy to use! Supports Spotify and every RPCs!",
+  icons: [{
+    rel: 'icon',
+    url: process.env.NODE_ENV === 'production' ? '/favicon.ico' : '/favicon-dev.ico',
+  }]
 }
 
 export default function RootLayout({
