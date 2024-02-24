@@ -1,35 +1,13 @@
 'use server'
 
-import { unstable_noStore as noStore } from 'next/cache'
 import { ConnectedAccount } from './types'
 
-// TODO: fetch activities
-// export const getLanyard_API = async (id: string) => {
-//   const data = await fetch(`https://api.lanyard.rest/v1/users/${id}`)
-//   const res = await data.json()
-
-//   if (!res.success) return new Error('User not found')
-
-//   return res
-// }
-
-export const getLanyard_dcdn = async (id: string) => {
-  noStore()
-
+export const getSocials = async (id: string) => {
   const data = await fetch(`https://dcdn.dstn.to/profile/${id}`)
   const res = await data.json()
 
-  if (!res) return new Error('User not found')
+  const socials: ConnectedAccount[] = res.connected_accounts
 
-  return res
-}
-
-// ---- Utils ----
-
-/** add link per social */
-export const editSocials = (
-  socials: ConnectedAccount[]
-): ConnectedAccount[] => {
   const generateHref = ({ type, name, id }: ConnectedAccount): string => {
     switch (type) {
       case 'paypal':
@@ -77,7 +55,7 @@ export const editSocials = (
     }
   }
 
-  socials.map((account: ConnectedAccount) => {
+  socials?.map((account: ConnectedAccount) => {
     account.href = generateHref(account)
     return account
   })

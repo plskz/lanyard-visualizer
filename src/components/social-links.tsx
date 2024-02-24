@@ -1,11 +1,11 @@
-import { ConnectedAccount } from '@/utils/types'
+import { getSocials } from '@/utils/lanyard'
 import Link from 'next/link'
 
-export default function SocialLinks({
-  socials,
-}: {
-  socials: ConnectedAccount[]
-}) {
+export default async function SocialLinks({ userID }: { userID: string }) {
+  const socials = await getSocials(userID)
+
+  if (!socials) return null
+
   return (
     <div className='flex flex-wrap gap-x-1'>
       {socials.map(({ type, id, name, href }) => (

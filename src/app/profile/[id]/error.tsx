@@ -1,11 +1,24 @@
-import Link from 'next/link'
+'use client' // Error components must be Client Components
 
-export default function ErrorPage() {
+import Link from 'next/link'
+import { useEffect } from 'react'
+
+export default function Error({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string }
+  reset: () => void
+}) {
+  useEffect(() => {
+    console.error(error)
+  }, [error])
+
   return (
     <main className='min-h-screen place-items-center grid'>
       <div className='flex flex-col items-center gap-5 w-11/12 max-w-[611px] text-center'>
         <h1 className='text-4xl font-bold text-white md:text-6xl'>
-          User not found
+          {error.message}
         </h1>
         <p className='text-xs text-white/50 md:text-base'>
           Make sure you entered a valid Discord user ID and make sure the user

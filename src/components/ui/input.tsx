@@ -9,7 +9,7 @@ export default function Input() {
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const discordId = e.currentTarget.discordId.value
-    router.push(`/${discordId}`)
+    router.push(`/profile/${discordId}`)
   }
 
   return (
