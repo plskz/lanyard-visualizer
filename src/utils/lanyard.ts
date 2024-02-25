@@ -1,8 +1,11 @@
 'use server'
 
+import { unstable_noStore as noStore } from 'next/cache'
 import { ConnectedAccount } from './types'
 
 export const getSocials = async (id: string) => {
+  noStore()
+
   const data = await fetch(`https://dcdn.dstn.to/profile/${id}`)
   const res = await data.json()
 
