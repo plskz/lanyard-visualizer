@@ -16,7 +16,7 @@ export default function Details({ userID }: { userID: any }) {
 
   return (
     <>
-      <EvervaultCard userAvatar={userAvatar} />
+      <EvervaultCard userAvatar={userAvatar} status={data.discord_status} />
       <h1 className='mt-3 text-4xl font-bold'>{global_name || username}</h1>
       <h2 className='mt-4 text-sm font-light'>
         ex aute incididunt ex tempor in dolor occaecat consectetur Lorem laboris

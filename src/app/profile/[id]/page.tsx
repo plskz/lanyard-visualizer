@@ -1,3 +1,4 @@
+import Activities from '@/components/activities'
 import Details from '@/components/details'
 import SocialLinks from '@/components/social-links'
 import { Icon } from '@/components/ui/evervault-card'
@@ -11,8 +12,15 @@ export default function Page({ params }: { params: { id: string } }) {
         <Icon className='absolute size-6 -top-3 -right-3' />
         <Icon className='absolute size-6 -bottom-3 -right-3' />
 
-        <Details userID={params.id} />
-        <SocialLinks userID={params.id} />
+        <div className='flex overflow-x-scroll snap-x snap-mandatory -bg-red-500 size-full'>
+          <div className='size-full shrink-0 snap-center'>
+            <Details userID={params.id} />
+            <SocialLinks userID={params.id} />
+          </div>
+          <div className='w-full shrink-0 snap-center'>
+            <Activities userID={params.id} />
+          </div>
+        </div>
       </div>
     </div>
   )

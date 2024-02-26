@@ -7,9 +7,11 @@ import { useEffect, useState } from 'react'
 
 export const EvervaultCard = ({
   userAvatar,
+  status,
   className,
 }: {
   userAvatar: string
+  status: string
   className?: string
 }) => {
   let mouseX = useMotionValue(0)
@@ -52,7 +54,12 @@ export const EvervaultCard = ({
             <div className='absolute size-full bg-black/[0.8] blur-sm rounded-full' />
             {/* <span className='absolute z-30 text-white'>Text</span> */}
             <Image
-              className='z-20 rounded-full bg-opacity-25'
+              className={cn('z-20 rounded-full bg-opacity-25 ring-4', {
+                'ring-green-500': status === 'online',
+                'ring-yellow-500': status === 'idle',
+                'ring-red-500': status === 'dnd',
+                'ring-gray-500': status === 'offline',
+              })}
               src={userAvatar}
               alt='Discord Profile'
               width={256}
