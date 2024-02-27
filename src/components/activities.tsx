@@ -24,8 +24,8 @@ export default function Activities({ userID }: { userID: any }) {
   }
 
   return (
-    <div className='flex flex-col items-center justify-center text-xs --bg-green-500 size-full md:text-sm'>
-      <div className='w-full space-y-3 --bg-yellow-900'>
+    <div className='flex flex-col items-center justify-center text-xs size-full md:text-sm'>
+      <div className='w-full space-y-3'>
         {activities.map((activity) => {
           const { name, id } = activity
           const largeImage = appAsset(activity)
@@ -35,7 +35,7 @@ export default function Activities({ userID }: { userID: any }) {
             const { song, artist, album_art_url } = data.spotify!
 
             return (
-              <div key={id} className='flex --bg-red-500 space-x-2'>
+              <div key={id} className='flex space-x-2'>
                 <Image
                   src={album_art_url || '/default-appAsset.png'}
                   alt='album art'
@@ -44,7 +44,7 @@ export default function Activities({ userID }: { userID: any }) {
                   className='rounded-md size-[96px] object-cover'
                 />
 
-                <div className='w-full --bg-emerald-600'>
+                <div className='w-full'>
                   <p className='mb-2 font-bold'>{getActivity(activity)}</p>
                   <p>{song}</p>
                   <p>by {artist}</p>
@@ -54,7 +54,7 @@ export default function Activities({ userID }: { userID: any }) {
           }
 
           return (
-            <div key={id} className='flex --bg-blue-800 space-x-2'>
+            <div key={id} className='flex space-x-2'>
               <Image
                 src={largeImage}
                 alt='app icon'
@@ -63,7 +63,7 @@ export default function Activities({ userID }: { userID: any }) {
                 className='rounded-md size-[96px] object-cover'
               />
 
-              <div className='--bg-pink-600 size-full'>
+              <div className='size-full'>
                 <p className='mb-2 font-bold'>{getActivity(activity)}</p>
                 <p>{name}</p>
               </div>
