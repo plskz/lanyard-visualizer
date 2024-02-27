@@ -19,7 +19,8 @@
 
 ### Todo 🚧
 
-- [ ] Progress bar
+- [ ] Progress bar for Spotify
+- [ ] Time elapsed
 - [ ] Display correct bio (support emojis and markdown)
 - [ ] Display multiple profiles (`/bookmarks`)
 - [ ] Add Animations
