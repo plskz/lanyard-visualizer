@@ -30,6 +30,9 @@ export default function Activities({ userID }: { userID: any }) {
           const { name, id } = activity
           const largeImage = appAsset(activity)
 
+          // don't show custom status
+          if (name === 'Custom Status') return
+
           // Listening to Spotify
           if (name === 'Spotify') {
             const { song, artist, album_art_url } = data.spotify!
