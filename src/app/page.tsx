@@ -1,10 +1,11 @@
+import { GithubIcon } from '@/components/icon/GithubIcon'
 import Input from '@/components/ui/input'
 import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className='min-h-screen grid place-items-center'>
-      <div className='flex flex-col items-center justify-center w-10/12 text-center space-y-5 md:size-96 -bg-blue-300'>
+    <main className='flex flex-col items-center justify-center min-h-screen gap-7'>
+      <div className='flex flex-col items-center justify-center w-10/12 text-center space-y-5 md:size-96 -bg-blue-300 -bg-red-700'>
         <Image
           src='/lanyard-logo.png'
           alt='lanyard logo'
@@ -27,6 +28,8 @@ export default function Home() {
 
         <Input />
       </div>
+
+      <GithubIcon />
     </main>
   )
 }

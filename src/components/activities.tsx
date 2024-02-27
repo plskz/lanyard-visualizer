@@ -45,7 +45,7 @@ export default function Activities({ userID }: { userID: any }) {
                 />
 
                 <div className='w-full --bg-emerald-600'>
-                  <p className='font-bold mb-2'>{getActivity(activity)}</p>
+                  <p className='mb-2 font-bold'>{getActivity(activity)}</p>
                   <p>{song}</p>
                   <p>by {artist}</p>
                 </div>
@@ -64,7 +64,7 @@ export default function Activities({ userID }: { userID: any }) {
               />
 
               <div className='--bg-pink-600 size-full'>
-                <p className='font-bold mb-2'>{getActivity(activity)}</p>
+                <p className='mb-2 font-bold'>{getActivity(activity)}</p>
                 <p>{name}</p>
               </div>
             </div>
