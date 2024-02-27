@@ -14,8 +14,11 @@ export default function Activities({ userID }: { userID: any }) {
 
   const { activities } = data
 
+  // don't show custom status
+  const filteredActivities = activities.filter((activity) => activity.type !== 4)
+
   // No activities
-  if (!activities.length) {
+  if (!filteredActivities.length ) {
     return (
       <div className='flex flex-col items-center justify-center text-xs size-full md:text-sm'>
         <h1>I&apos;m not currently doing anything!</h1>
@@ -26,12 +29,9 @@ export default function Activities({ userID }: { userID: any }) {
   return (
     <div className='flex flex-col items-center justify-center text-xs size-full md:text-sm'>
       <div className='w-full space-y-3'>
-        {activities.map((activity) => {
+        {filteredActivities.map((activity) => {
           const { name, id } = activity
           const largeImage = appAsset(activity)
-
-          // don't show custom status
-          if (name === 'Custom Status') return
 
           // Listening to Spotify
           if (name === 'Spotify') {
