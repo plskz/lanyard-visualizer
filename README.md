@@ -20,7 +20,7 @@
 ### Todo 🚧
 
 - [ ] Progress bar for Spotify
-- [ ] Time elapsed
+- [x] Time elapsed
 - [ ] Display correct bio (support emojis and markdown)
 - [ ] Display multiple profiles (`/bookmarks`)
 - [ ] Add Animations
@@ -38,4 +38,3 @@ https://github.com/plskz/plskz/assets/57343545/f7e2edcb-46cf-4195-a712-ae99698bd
 
 - [eggsy/lanyard-visualizer](https://github.com/eggsy/lanyard-visualizer)
 - [pxseu/lanyard-ui](https://github.com/pxseu/lanyard-ui)
-

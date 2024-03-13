@@ -5,6 +5,7 @@ import { appAsset } from '@/utils/discord-cdn'
 import Image from 'next/image'
 import { useLanyardWS } from 'use-lanyard'
 import { ActivitiesSkeleton } from './skeletons'
+import Timestamps from './timestamps'
 
 export default function Activities({ userID }: { userID: any }) {
   const data = useLanyardWS(userID)
@@ -18,7 +19,7 @@ export default function Activities({ userID }: { userID: any }) {
   const filteredActivities = activities.filter((activity) => activity.type !== 4)
 
   // No activities
-  if (!filteredActivities.length ) {
+  if (!filteredActivities.length) {
     return (
       <div className='flex flex-col items-center justify-center text-xs size-full md:text-sm'>
         <h1>I&apos;m not currently doing anything!</h1>
@@ -30,7 +31,8 @@ export default function Activities({ userID }: { userID: any }) {
     <div className='flex flex-col items-center justify-center text-xs size-full md:text-sm'>
       <div className='w-full space-y-3'>
         {filteredActivities.map((activity) => {
-          const { name, id, details, state } = activity
+          const { name, id, details, state, timestamps } = activity
+
           const largeImage = appAsset(activity)
 
           // Listening to Spotify
@@ -68,9 +70,11 @@ export default function Activities({ userID }: { userID: any }) {
 
               <div className='size-full'>
                 <p className='mb-2 font-bold'>{getActivity(activity)}</p>
-                
+
                 <p>{details}</p>
                 <p>{state}</p>
+
+                <Timestamps timestamps={timestamps} />
               </div>
             </div>
           )
