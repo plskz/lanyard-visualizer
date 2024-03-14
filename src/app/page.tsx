@@ -1,4 +1,4 @@
-import { GithubIcon } from '@/components/icon/GithubIcon'
+import { GitHubIcon } from '@/components/icons/github'
 import Input from '@/components/ui/input'
 import Image from 'next/image'
 
@@ -29,7 +29,7 @@ export default function Home() {
         <Input />
       </div>
 
-      <GithubIcon />
+      <GitHubIcon />
     </main>
   )
 }

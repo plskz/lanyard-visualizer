@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { SVGProps } from 'react'
 
-export function GithubIcon(props: SVGProps<SVGSVGElement>) {
+export function GitHubIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <Link href='https://github.com/plskz/lanyard-visualizer'>
       <svg
