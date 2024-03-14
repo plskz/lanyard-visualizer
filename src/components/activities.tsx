@@ -31,7 +31,7 @@ export default function Activities({ userID }: { userID: any }) {
     <div className='flex flex-col items-center justify-center text-xs size-full md:text-sm'>
       <div className='w-full space-y-3'>
         {filteredActivities.map((activity) => {
-          const { name, id, details, state, timestamps } = activity
+          const { name, id, details, state, timestamps, type } = activity
 
           const largeImage = appAsset(activity)
 
@@ -53,6 +53,8 @@ export default function Activities({ userID }: { userID: any }) {
                   <p className='mb-2 font-bold'>{getActivity(activity)}</p>
                   <p>{song}</p>
                   <p>by {artist}</p>
+
+                  <Timestamps timestamps={timestamps} type={type} />
                 </div>
               </div>
             )
@@ -74,7 +76,7 @@ export default function Activities({ userID }: { userID: any }) {
                 <p>{details}</p>
                 <p>{state}</p>
 
-                <Timestamps timestamps={timestamps} />
+                <Timestamps timestamps={timestamps} type={type} />
               </div>
             </div>
           )
