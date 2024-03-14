@@ -1,5 +1,5 @@
 import { useTime } from '@/app/hooks/useTime'
-import { Timestamps } from 'use-lanyard'
+import type { Timestamps } from 'use-lanyard'
 
 export default function Timestamps({
   timestamps,
