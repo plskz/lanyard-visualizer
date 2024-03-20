@@ -23,7 +23,7 @@
 - [x] Time elapsed
 - [x] Display correct bio (support emojis and markdown)
 - [ ] Display multiple profiles (`/bookmarks`)
-- [ ] Add Animations
+- [x] Page transition
 - [ ] README
 
 See [figma file](https://www.figma.com/file/ShikDN3EN1uAajmu0yJsWi/lanyard-visualizer?type=design&node-id=0%3A1&mode=design&t=jUlkOCK9urCzOp39-1) ← ^,..,^
