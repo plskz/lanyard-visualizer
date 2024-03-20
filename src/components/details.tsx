@@ -1,11 +1,12 @@
 'use client'
 
 import { avatarUri } from '@/utils/discord-cdn'
+import { toHTML } from 'discord-markdown'
 import { useLanyardWS } from 'use-lanyard'
-import { EvervaultCard } from './ui/evervault-card'
 import { DetailsSkeleton } from './skeletons'
+import { EvervaultCard } from './ui/evervault-card'
 
-export default function Details({ userID }: { userID: any }) {
+export default function Details({ userID, bio }: { userID: any; bio: string }) {
   const data = useLanyardWS(userID)
 
   if (!data) return <DetailsSkeleton />
@@ -18,10 +19,13 @@ export default function Details({ userID }: { userID: any }) {
     <>
       <EvervaultCard userAvatar={userAvatar} status={data.discord_status} />
       <h1 className='mt-3 text-4xl font-bold'>{global_name || username}</h1>
-      <h2 className='mt-4 text-sm font-light'>
-        ex aute incididunt ex tempor in dolor occaecat consectetur Lorem laboris
-        in
-      </h2>
+      {bio && (
+        <div
+          dangerouslySetInnerHTML={{
+            __html: toHTML(bio),
+          }}
+        />
+      )}
     </>
   )
 }

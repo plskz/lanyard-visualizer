@@ -1,9 +1,7 @@
-import { getSocials } from '@/utils/lanyard'
+import { ConnectedAccount } from '@/utils/types'
 import Link from 'next/link'
 
-export default async function SocialLinks({ userID }: { userID: string }) {
-  const socials = await getSocials(userID)
-
+export default async function SocialLinks({ socials }: { socials: ConnectedAccount[] }) {
   if (!socials) return null
 
   return (
