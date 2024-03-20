@@ -21,7 +21,7 @@
 
 - [x] Progress bar for Spotify
 - [x] Time elapsed
-- [ ] Display correct bio (support emojis and markdown)
+- [x] Display correct bio (support emojis and markdown)
 - [ ] Display multiple profiles (`/bookmarks`)
 - [ ] Add Animations
 - [ ] README

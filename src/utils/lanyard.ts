@@ -1,12 +1,9 @@
-'use server'
-
-import { unstable_noStore as noStore } from 'next/cache'
 import { ConnectedAccount } from './types'
 
 export const getSocials = async (id: string) => {
-  noStore()
-
-  const data = await fetch(`https://dcdn.dstn.to/profile/${id}`)
+  const data = await fetch(`https://dcdn.dstn.to/profile/${id}`, {
+    next: { revalidate: 3600 },
+  })
   const res = await data.json()
 
   const socials: ConnectedAccount[] = res.connected_accounts
@@ -64,4 +61,13 @@ export const getSocials = async (id: string) => {
   })
 
   return socials
+}
+
+export const getBio = async (id: string) => {
+  const data = await fetch(`https://dcdn.dstn.to/profile/${id}`, {
+    next: { revalidate: 3600 },
+  })
+  const res = await data.json()
+
+  return res.user.bio
 }
