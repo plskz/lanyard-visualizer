@@ -1,10 +1,16 @@
 import { GitHubIcon } from '@/components/icons/github'
 import Input from '@/components/ui/input'
+import { Spotlight } from '@/components/ui/spotlight'
 import Image from 'next/image'
 
 export default function Home() {
   return (
     <main className='flex flex-col items-center justify-center min-h-screen gap-7'>
+      <Spotlight
+        className='top-20 left-0 md:left-60 md:-top-20'
+        fill='#ffffff70'
+      />
+
       <div className='flex flex-col items-center justify-center w-10/12 text-center space-y-5 md:size-96 -bg-blue-300 -bg-red-700'>
         <Image
           src='/lanyard-logo.png'
