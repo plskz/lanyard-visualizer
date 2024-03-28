@@ -6,7 +6,7 @@ import { useLanyardWS } from 'use-lanyard'
 import { DetailsSkeleton } from './skeletons'
 import { EvervaultCard } from './ui/evervault-card'
 
-export default function Details({ userID, bio }: { userID: any; bio: string }) {
+export default function Details({ userID }: { userID: any }) {
   const data = useLanyardWS(userID)
 
   if (!data) return <DetailsSkeleton />
@@ -19,13 +19,7 @@ export default function Details({ userID, bio }: { userID: any; bio: string }) {
     <>
       <EvervaultCard userAvatar={userAvatar} status={data.discord_status} />
       <h1 className='mt-3 text-4xl font-bold'>{global_name || username}</h1>
-      {bio && (
-        <div
-          dangerouslySetInnerHTML={{
-            __html: toHTML(bio),
-          }}
-        />
-      )}
+      <p>Lorem ipsum dolor sit amet.</p>
     </>
   )
 }

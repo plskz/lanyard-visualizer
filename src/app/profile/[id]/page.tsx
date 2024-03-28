@@ -7,7 +7,6 @@ import Link from 'next/link'
 
 export default async function Page({ params }: { params: { id: string } }) {
   const socials = await getSocials(params.id)
-  const bio = await getBio(params.id)
 
   return (
     <div className='flex flex-col items-center justify-center min-h-screen gap-5'>
@@ -19,7 +18,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
         <div className='snap-x snap-mandatory size-full flex overflow-x-scroll'>
           <div className='size-full shrink-0 snap-center'>
-            <Details userID={params.id} bio={bio} />
+            <Details userID={params.id} />
             <SocialLinks socials={socials} />
           </div>
           <div className='shrink-0 snap-center w-full'>
