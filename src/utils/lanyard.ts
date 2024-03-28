@@ -69,5 +69,5 @@ export const getBio = async (id: string) => {
   })
   const res = await data.json()
 
-  return res.user.bio
+  return res?.user?.bio
 }
