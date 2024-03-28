@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       animation: {
         spotlight: 'spotlight 2s ease .75s 1 forwards',
+        shine: 'shine 2s linear infinite',
       },
       keyframes: {
         spotlight: {
@@ -20,6 +21,14 @@ const config: Config = {
           '100%': {
             opacity: '1',
             transform: 'translate(-50%,-40%) scale(1)',
+          },
+        },
+        shine: {
+          from: {
+            backgroundPosition: '0 0',
+          },
+          to: {
+            backgroundPosition: '-200% 0',
           },
         },
       },
