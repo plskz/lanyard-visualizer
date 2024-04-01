@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Lanyard Visualizer</h1>
-  <p>An interactive example of how you could use <a href="https://github.com/Phineas/lanyard" target="_blank">Lanyard API</a> to create amazing real-time Discord status related things!</p>
+  <sub>An interactive example of how you could use <a href="https://github.com/Phineas/lanyard" target="_blank">Lanyard API</a> to create amazing real-time Discord status related things!</sub>
 </div>
 
 </br>
