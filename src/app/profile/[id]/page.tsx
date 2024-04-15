@@ -17,7 +17,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         <Icon className='size-6 -top-3 -right-3 absolute' />
         <Icon className='size-6 -bottom-3 -right-3 absolute' />
 
-        <div className='snap-x snap-mandatory size-full flex overflow-x-scroll'>
+        <div className='snap-x snap-mandatory size-full flex overflow-x-scroll overflow-y-hidden'>
           <div className='size-full shrink-0 snap-center'>
             <Details userID={params.id} bio={bio} />
             <SocialLinks socials={socials} />
