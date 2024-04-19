@@ -10,8 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Lanyard Visualizer',
-  description:
-    "A service to display your Discord status online using Lanyard's API, free and easy to use! Supports Spotify and every RPCs!",
+  description: 'Display your Discord status online using Lanyard API',
   icons: [
     {
       rel: 'icon',
