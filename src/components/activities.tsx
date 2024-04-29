@@ -51,8 +51,8 @@ export default function Activities({ userID }: { userID: any }) {
 
                 <div className='w-full'>
                   <p className='mb-2 font-bold'>{getActivity(activity)}</p>
-                  <p>{song}</p>
-                  <p>by {artist}</p>
+                  <p className='line-clamp-1'>{song}</p>
+                  <p className='line-clamp-1'>by {artist}</p>
 
                   <Timestamps timestamps={timestamps} type={type} />
                 </div>
