@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { useLanyardWS } from 'use-lanyard'
 import { ActivitiesSkeleton } from './skeletons'
 import Timestamps from './timestamps'
+import Link from 'next/link'
 
 export default function Activities({ userID }: { userID: any }) {
   const data = useLanyardWS(userID)
@@ -37,7 +38,7 @@ export default function Activities({ userID }: { userID: any }) {
 
           // Listening to Spotify
           if (name === 'Spotify') {
-            const { song, artist, album_art_url } = data.spotify!
+            const { song, artist, album_art_url, track_id } = data.spotify!
 
             return (
               <div key={id} className='flex space-x-2'>
@@ -51,7 +52,13 @@ export default function Activities({ userID }: { userID: any }) {
 
                 <div className='w-full'>
                   <p className='mb-2 font-bold'>{getActivity(activity)}</p>
-                  <p className='line-clamp-1'>{song}</p>
+                  <Link
+                    href={`https://open.spotify.com/track/${track_id}`}
+                    className='hover:underline'
+                    target='_blank'
+                  >
+                    <p className='line-clamp-1'>{song}</p>
+                  </Link>
                   <p className='line-clamp-1'>by {artist}</p>
 
                   <Timestamps timestamps={timestamps} type={type} />
