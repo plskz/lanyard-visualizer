@@ -1,3 +1,5 @@
+'use server'
+
 import { ConnectedAccount } from './types'
 
 export const getSocials = async (id: string) => {
