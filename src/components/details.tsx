@@ -1,24 +1,24 @@
-'use client'
+"use client";
 
-import { avatarUri } from '@/utils/discord-cdn'
-import { toHTML } from 'discord-markdown'
-import { useLanyardWS } from 'use-lanyard'
-import { DetailsSkeleton } from './skeletons'
-import { EvervaultCard } from './ui/evervault-card'
+import { avatarUri } from "@/utils/discord-cdn";
+import { toHTML } from "discord-markdown";
+import { useLanyardWS } from "use-lanyard";
+import { DetailsSkeleton } from "./skeletons";
+import { EvervaultCard } from "./ui/evervault-card";
 
 export default function Details({ userID, bio }: { userID: any; bio: string }) {
-  const data = useLanyardWS(userID)
+  const data = useLanyardWS(userID);
 
-  if (!data) return <DetailsSkeleton />
-  if (JSON.stringify(data) === '{}') throw new Error('User not found')
+  if (!data) return <DetailsSkeleton />;
+  if (JSON.stringify(data) === "{}") throw new Error("User not found");
 
-  const { id, avatar, global_name, username } = data.discord_user
-  const userAvatar = avatarUri(id, avatar!)
+  const { id, avatar, global_name, username } = data.discord_user;
+  const userAvatar = avatarUri(id, avatar!);
 
   return (
     <>
       <EvervaultCard userAvatar={userAvatar} status={data.discord_status} />
-      <h1 className='mt-3 text-4xl font-bold'>{global_name || username}</h1>
+      <h1 className="mt-3 text-4xl font-bold">{global_name || username}</h1>
       {bio && (
         <div
           dangerouslySetInnerHTML={{
@@ -27,5 +27,5 @@ export default function Details({ userID, bio }: { userID: any; bio: string }) {
         />
       )}
     </>
-  )
+  );
 }
