@@ -20,7 +20,7 @@ export default function Input() {
       <input
         type="text"
         name="discordId"
-        className="w-full appearance-none rounded-lg border-[1.5px] border-white/10 bg-transparent py-2 pl-3 pr-20 text-white placeholder-white/20 outline-none transition-all hover:border-white/20 focus:border-white/30"
+        className="w-full appearance-none rounded-lg border-[1.5px] border-white/10 bg-transparent py-2 pl-3 pr-20 text-white placeholder-white/20 outline-hidden transition-all hover:border-white/20 focus:border-white/30"
         placeholder="Enter your Discord user ID"
       />
 

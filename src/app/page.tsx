@@ -22,7 +22,7 @@ export default function Home() {
 
         <h1 className="text-5xl font-bold md:text-7xl">
           <span className="block">Lanyard</span>
-          <span className="block bg-gradient-to-r from-neutral-100 via-slate-400 to-neutral-400 bg-[200%_auto] bg-clip-text leading-tight text-transparent">
+          <span className="block bg-linear-to-r from-neutral-100 via-slate-400 to-neutral-400 bg-[200%_auto] bg-clip-text leading-tight text-transparent">
             Visualizer
           </span>
         </h1>
